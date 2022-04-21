@@ -1,5 +1,5 @@
-let hostname = '127.0.0.1';
-let port = process.env.PORT || 443
+let hostname = process.env.YOUR_HOST || '0.0.0.0';
+let port = process.env.YOUR_PORT || process.env.PORT || 443
 
 let express = require('express'),
     server = express();
