@@ -1,0 +1,26 @@
+{
+  "name": "ketaki",
+  "version": "1.0.0",
+  "description": "Hello World Student Node Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quibly/cse341-node.git"
+  },
+  "author": "Adam Dutson <Quibly@BYUI.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Quibly/cse341-node/issues"
+  },
+  "homepage": "https://github.com/Quibly/cse341-node#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
