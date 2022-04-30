@@ -15,7 +15,6 @@ const initDB = () => {
         if (err) throw err;
         _client = client;
         _collection = _client.db("lantern").collection("contacts");
-        console.log('DB Connected');
     });
 };
 
