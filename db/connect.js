@@ -8,6 +8,8 @@ const MongoClient = require('mongodb').MongoClient;
 let _client;
 let _collection;
 
+
+// initialize database
 const initDB = () => {
     MongoClient.connect(process.env.DB_URI, (err, client) => {
         if (err) throw err;
@@ -17,6 +19,7 @@ const initDB = () => {
     });
 };
 
+// get data from database
 const getCollection = () => {
     return _collection;
 }

@@ -1,8 +1,8 @@
+// load modules
 const express = require('express');
 const { ObjectId } = require('mongodb');
 const route = express.Router();
 let connect = require('../db/connect');
-const ObjectID = require('mongodb').ObjectId;
 
 route.get('/', (req, res) => {
     

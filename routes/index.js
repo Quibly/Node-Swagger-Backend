@@ -1,9 +1,7 @@
+// load module for routing
 const routes = require('express').Router();
 
-routes.get('/', (req, res) => {
-    res.send('Green Ninja Index');
-})
-
+// route instruction for traffic on /contacts
 routes.use('/contacts', require('./contacts'));
 
 module.exports = routes;
