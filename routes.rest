@@ -1,4 +1,32 @@
-GET http://localhost:8080/contacts
-###
+//Checking Localhost Request
 GET http://localhost:8080/
 ###
+
+//Checking Localhost All Contacts Request
+GET http://localhost:8080/contacts/
+###
+
+//Checking Localhost Specific Contacts Requests
+GET http://localhost:8080/contacts/62674f09591581c0a31b814c/
+###
+GET http://localhost:8080/contacts/62674fc0591581c0a31b814d/
+###
+GET http://localhost:8080/contacts/62675046591581c0a31b814f/
+###
+
+
+
+//Checking Heroku Request
+https://fathomless-island-16961.herokuapp.com/
+###
+
+//Checking Heroku All Contacts Request
+https://fathomless-island-16961.herokuapp.com/contacts/
+###
+
+//Checking Heroku Specific Contacts Requests
+https://fathomless-island-16961.herokuapp.com/contacts/62674f09591581c0a31b814c/
+###
+https://fathomless-island-16961.herokuapp.com/contacts/62674fc0591581c0a31b814d/
+###
+https://fathomless-island-16961.herokuapp.com/contacts/62675046591581c0a31b814f/
