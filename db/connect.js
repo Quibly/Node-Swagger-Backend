@@ -1,13 +1,24 @@
+// .env variable import
 const dotenv = require('dotenv');
 dotenv.config();
-const mongoose = require('mongoose');
 
-const connectDB = async() => {
-    await mongoose.connect(process.env.DB_URI, {
-        useUnifiedTopology: true,
-        useNewUrlParser: true
+// database code
+const MongoClient = require('mongodb').MongoClient;
+
+let _client;
+let _collection;
+
+const initDB = () => {
+    MongoClient.connect(process.env.DB_URI, (err, client) => {
+        if (err) throw err;
+        _client = client;
+        _collection = _client.db("lantern").collection("contacts");
+        console.log('DB Connected');
     });
-    console.log('Database connected');
 };
 
-module.exports = connectDB;
+const getCollection = () => {
+    return _collection;
+}
+
+module.exports = { initDB, getCollection };
