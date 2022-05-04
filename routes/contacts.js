@@ -3,6 +3,9 @@ const express = require('express');
 const route = express.Router();
 let connect = require('../db/connect');
 
+// load model
+let contact = require('../models/contact');
+
 // create variable for ObjectId use
 const { ObjectId } = require('mongodb');
 
@@ -29,4 +32,20 @@ route.get('/:id', (req, res) => {
     
 });
 
+//route endpoint for adding a new contact
+route.post('/add_contact', async (request, response) => {
+    
+    console.log(request.body);
+    const newContact = await new contact(request.body);
+
+    try {
+        await newContact.save()
+        response.status(200).send(newContact);
+    } catch (err) {
+        res.status(500).send(err);
+    }
+
+});
+
 module.exports = route;
+

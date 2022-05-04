@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // database code
-const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
 
 let _client;
 let _collection;
@@ -11,10 +11,10 @@ let _collection;
 
 // initialize database
 const initDB = () => {
-    MongoClient.connect(process.env.DB_URI, (err, client) => {
+    mongoose.connect(process.env.DB_URI, (err, client) => {
         if (err) throw err;
         _client = client;
-        _collection = _client.db("lantern").collection("contacts");
+        _collection = _client.db.collection("contacts");
     });
 };
 
