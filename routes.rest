@@ -19,6 +19,7 @@ POST http://localhost:8080/contacts/add_contact HTTP/1.1
 Content-Type: application/json
 
 {
+    "_id": "6271f9e855b4a4bb5336cae5",
     "firstName": "Hal",
     "lastName": "Jordan",
     "email": "allthingsHal@gmail.com",
@@ -27,6 +28,22 @@ Content-Type: application/json
 }
 ###
 
+//Checking Localhost Update Contact Request
+PUT http://localhost:8080/contacts/6271f9e855b4a4bb5336cae5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Hal",
+    "lastName": "Jordan",
+    "email": "allthingsHal@gmail.com",
+    "favoriteColor": "red",
+    "birthday": "0305"
+}
+###
+
+//Checking Localhost Delete Contact Request
+GET http://localhost:8080/contacts/delete/6271f9e855b4a4bb5336cae5
+###
 
 //Checking Heroku Request
 GET https://fathomless-island-16961.herokuapp.com/

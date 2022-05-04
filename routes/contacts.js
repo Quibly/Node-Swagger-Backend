@@ -36,7 +36,7 @@ route.get('/:id', (req, res) => {
 route.post('/add_contact', async (request, response) => {
     
     console.log(request.body);
-    const newContact = await new contact(request.body);
+    const newContact = new contact(request.body);
 
     try {
         await newContact.save()
@@ -45,6 +45,40 @@ route.post('/add_contact', async (request, response) => {
         res.status(500).send(err);
     }
 
+});
+
+//route endpoint for updating a contact
+route.put('/:id', async (request, response) => {
+    
+    const {id: _id} = request.params;
+    const content = request.body;
+
+    console.log(content);
+
+    contact.findByIdAndUpdate(_id, content, (err) => {
+            if (err) {
+                response.error(err);
+            } else {
+                response.status(200).send(content);
+            }
+        }
+    )
+
+});
+
+//route endpoint for updating a contact
+route.get('/delete/:id', async (request, response) => {
+    
+    const contactID = request.params.id;
+
+    contact.findByIdAndRemove(contactID, (err) => {
+            if (err) {
+                response.error(err);
+            }
+    });
+
+    response.status(200).send('Successfully Deleted Contact');
+    
 });
 
 module.exports = route;

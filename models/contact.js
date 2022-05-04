@@ -7,6 +7,6 @@ let contactSchema = new Schema({
     email: String,
     favoriteColor: String,
     birthday: String
-});
+}, { versionKey: false });
 
 module.exports = mongoose.model('Contact', contactSchema, "contacts");
