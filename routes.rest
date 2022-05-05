@@ -6,6 +6,7 @@ GET http://localhost:8080/
 GET http://localhost:8080/contacts/
 ###
 
+
 //Checking Localhost Specific Contacts Requests
 GET http://localhost:8080/contacts/62674f09591581c0a31b814c/
 ###
@@ -13,6 +14,23 @@ GET http://localhost:8080/contacts/62674fc0591581c0a31b814d/
 ###
 GET http://localhost:8080/contacts/62675046591581c0a31b814f/
 ###
+
+
+//Checking Heroku Request
+GET https://fathomless-island-16961.herokuapp.com/
+###
+
+//Checking Heroku All Contacts Request
+GET https://fathomless-island-16961.herokuapp.com/contacts/
+###
+
+//Checking Heroku Specific Contacts Requests
+GET https://fathomless-island-16961.herokuapp.com/contacts/62674f09591581c0a31b814c/
+###
+GET https://fathomless-island-16961.herokuapp.com/contacts/62674fc0591581c0a31b814d/
+###
+GET https://fathomless-island-16961.herokuapp.com/contacts/62675046591581c0a31b814f/
+
 
 //Checking Localhost Add New Contact Request
 POST http://localhost:8080/contacts/add_contact HTTP/1.1
@@ -45,17 +63,35 @@ Content-Type: application/json
 GET http://localhost:8080/contacts/delete/6271f9e855b4a4bb5336cae5
 ###
 
-//Checking Heroku Request
-GET https://fathomless-island-16961.herokuapp.com/
+
+
+//Checking Heroku Add New Contact Request
+POST http://fathomless-island-16961.herokuapp.com/contacts/add_contact HTTP/1.1
+Content-Type: application/json
+
+{
+    "_id": "6271f9e855b4a4bb5336cae5",
+    "firstName": "Hal",
+    "lastName": "Jordan",
+    "email": "allthingsHal@gmail.com",
+    "favoriteColor": "green",
+    "birthday": "0305"
+}
 ###
 
-//Checking Heroku All Contacts Request
-GET https://fathomless-island-16961.herokuapp.com/contacts/
+//Checking Heroku Update Contact Request
+PUT http://fathomless-island-16961.herokuapp.com/contacts/6271f9e855b4a4bb5336cae5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Hal",
+    "lastName": "Jordan",
+    "email": "allthingsHal@gmail.com",
+    "favoriteColor": "red",
+    "birthday": "0305"
+}
 ###
 
-//Checking Heroku Specific Contacts Requests
-GET https://fathomless-island-16961.herokuapp.com/contacts/62674f09591581c0a31b814c/
+//Checking Heroku Delete Contact Request
+GET http://fathomless-island-16961.herokuapp.com/contacts/delete/6271f9e855b4a4bb5336cae5
 ###
-GET https://fathomless-island-16961.herokuapp.com/contacts/62674fc0591581c0a31b814d/
-###
-GET https://fathomless-island-16961.herokuapp.com/contacts/62675046591581c0a31b814f/
