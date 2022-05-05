@@ -40,7 +40,7 @@ route.post('/add_contact', async (request, response) => {
 
     try {
         await newContact.save()
-        response.status(200).send(newContact);
+        response.status(201).send(newContact);
     } catch (err) {
         res.status(500).send(err);
     }
@@ -77,7 +77,7 @@ route.get('/delete/:id', async (request, response) => {
             }
     });
 
-    response.status(200).send('Successfully Deleted Contact');
+    response.status(200).send(`Successfully Deleted Contact: ${contactID}`);
     
 });
 
