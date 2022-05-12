@@ -7,7 +7,7 @@ const doc = {
     },
     host: 'fathomless-island-16961.herokuapp.com',
     port: process.env.PORT,
-    schemes: ['http']
+    schemes: ['http', 'https']
 };
 
 const outputFile = './swagger/swagger-output.json';
