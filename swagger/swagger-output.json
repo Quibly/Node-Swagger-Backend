@@ -5,7 +5,7 @@
     "description": "This API GETS and SETS contact information for users.\nThe default schema format is outlined in the default request descriptions.\n\nAuthor: Adam Dutson\nProject: Contacts API\n\nThis is a student project for 341 Web Backend Development II\nSchool: Brigham Young University-Idaho",
     "version": "1.0.0"
   },
-  "host": "https://fathomless-island-16961.herokuapp.com",
+  "host": "http://fathomless-island-16961.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "http"
@@ -13,7 +13,7 @@
   "paths": {
     "/contacts/": {
       "get": {
-        "description": "This GET request address retrieves a copy of the current Contacts collection entries. Just type the following URL into your browser:\n\nhttps://fathomless-island-16961.herokuapp.com/contacts/",
+        "description": "This GET request address retrieves a copy of the current Contacts collection entries. Just type the following URL into your browser:\n\nhttp://fathomless-island-16961.herokuapp.com/contacts/",
         "parameters": [],
         "responses": {
           "200": {
@@ -50,7 +50,7 @@
         }
       },
       "post": {
-        "description": "This POST request address adds a new contact to the Contacts collection.\nYou can add the contact using the example schema format.\nAll fields in the schema body are required and the request is sent to:\n\nhttps://fathomless-island-16961.herokuapp.com/contacts/",
+        "description": "This POST request address adds a new contact to the Contacts collection.\nYou can add the contact using the example schema format.\nAll fields in the schema body are required and the request is sent to:\n\nhttp://fathomless-island-16961.herokuapp.com/contacts/",
         "parameters": [
           {
             "name": "body",
@@ -134,7 +134,7 @@
             "in": "path",
             "required": true,
             "description": "Get a specific contact with the _id #",
-            "example": "https://fathomless-island-16961.herokuapp.com/contacts/62674fc0591581c0a31b814d",
+            "example": "http://fathomless-island-16961.herokuapp.com/contacts/62674fc0591581c0a31b814d",
             "value": "62674fc0591581c0a31b814d"
           }
         ],
@@ -180,7 +180,7 @@
             "in": "path",
             "required": true,
             "description": "Get a specific contact with the _id # and change contents with request body",
-            "example": "https://fathomless-island-16961.herokuapp.com/contacts/627c345cfc96e3e3341ab79e",
+            "example": "http://fathomless-island-16961.herokuapp.com/contacts/627c345cfc96e3e3341ab79e",
             "value": "627c345cfc96e3e3341ab79e"
           },
           {
@@ -263,7 +263,7 @@
             "in": "path",
             "required": true,
             "description": "Get a specific contact by _id # and delete it from the database.",
-            "example": "https://fathomless-island-16961.herokuapp.com/contacts/627c4da2b444b59102205d86",
+            "example": "http://fathomless-island-16961.herokuapp.com/contacts/627c4da2b444b59102205d86",
             "value": "627c4da2b444b59102205d86"
           }
         ],
