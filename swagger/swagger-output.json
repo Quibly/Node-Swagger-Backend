@@ -5,7 +5,7 @@
     "description": "This API GETS and SETS contact information for users.\nThe default schema format is outlined in the default request descriptions.\n\nAuthor: Adam Dutson\nProject: Contacts API\n\nThis is a student project for 341 Web Backend Development II\nSchool: Brigham Young University-Idaho",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://fathomless-island-16961.herokuapp.com/",
   "basePath": "/",
   "schemes": [
     "http"
