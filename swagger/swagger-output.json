@@ -1,0 +1,281 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Contacts API",
+    "description": "This API GETS and SETS contact information for users.\nThe default schema format is outlined in the default request descriptions.\n\nAuthor: Adam Dutson\nProject: Contacts API\n\nThis is a student project for 341 Web Backend Development II\nSchool: Brigham Young University-Idaho",
+    "version": "1.0.0"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/contacts/": {
+      "get": {
+        "description": "This GET request address retrieves a copy of the current Contacts collection entries. Just type the following URL into your browser:\n\nhttps://fathomless-island-16961.herokuapp.com/contacts/",
+        "parameters": [],
+        "responses": {
+          "200": {
+              "description": "OK.",
+              "schema": {
+                  "type": "object",
+                  "properties": {
+                    "firstName": {
+                      "type": "string",
+                      "example": "Jon"
+                    },
+                    "lastName": {
+                      "type": "string",
+                      "example": "Doe"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "test@email.com"
+                    },
+                    "favoriteColor": {
+                      "type": "string",
+                      "example": "test"
+                    },
+                    "birthday": {
+                      "type": "string",
+                      "example": "0101"
+                    }
+                  }
+              }
+          },
+          "500": {
+            "description": "This request has failed due to some error."
+          }
+        }
+      },
+      "post": {
+        "description": "This POST request address adds a new contact to the Contacts collection.\nYou can add the contact using the example schema format.\nAll fields in the schema body are required and the request is sent to:\n\nhttps://fathomless-island-16961.herokuapp.com/contacts/",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Add a contact using the request body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Jon"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@email.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "0101"
+                }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "favoriteColor",
+                "birthday"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created Contact Successfully: {_id: #}",
+            "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string",
+                    "example": "Jon"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "Doe"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "test@email.com"
+                  },
+                  "favoriteColor": {
+                    "type": "string",
+                    "example": "test"
+                  },
+                  "birthday": {
+                    "type": "string",
+                    "example": "0101"
+                  }
+                }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/contacts/{id}": {
+      "get": {
+        "description": "This Get request uses a unique contact :_id value to retrieve a specific contact from the Contacts collection.\nUse the GET request as shown in the example below.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Get a specific contact with the _id #",
+            "example": "https://fathomless-island-16961.herokuapp.com/contacts/62674fc0591581c0a31b814d",
+            "value": "62674fc0591581c0a31b814d"
+          }
+        ],
+        "responses": {
+          "200": {
+              "description": "OK.",
+              "schema": {
+                  "type": "object",
+                  "properties": {
+                    "firstName": {
+                      "type": "string",
+                      "example": "Jon"
+                    },
+                    "lastName": {
+                      "type": "string",
+                      "example": "Doe"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "test@email.com"
+                    },
+                    "favoriteColor": {
+                      "type": "string",
+                      "example": "test"
+                    },
+                    "birthday": {
+                      "type": "string",
+                      "example": "0101"
+                    }
+                  }
+              }
+          },
+          "500": {
+            "description": "This request has failed due to some error."
+          }
+        }
+      },
+      "put": {
+        "description": "This PUT request uses a unique contact :_id value to update a specific contact in the Contacts collection.\nUse the PUT request option by following the example below.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Get a specific contact with the _id # and change contents with request body",
+            "example": "https://fathomless-island-16961.herokuapp.com/contacts/627c345cfc96e3e3341ab79e",
+            "value": "627c345cfc96e3e3341ab79e"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update a contact using request body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Jon"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@email.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "differentTestPut"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "0101"
+                }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "favoriteColor",
+                "birthday"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Updated Contact:",
+            "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string",
+                    "example": "Jon"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "Doe"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "test@email.com"
+                  },
+                  "favoriteColor": {
+                    "type": "string",
+                    "example": "test"
+                  },
+                  "birthday": {
+                    "type": "string",
+                    "example": "0101"
+                  }
+                }
+            }
+          },
+          "500": {
+            "description": "There was a problem with your update. It didn't go through."
+          }
+        }
+      },
+      "delete": {
+        "description": "This DELETE request uses a unique :_id value to find a specific contact from the Contacts collection and delete it from the collection.\nUse the example below to accomplish the deletion.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Get a specific contact by _id # and delete it from the database.",
+            "example": "https://fathomless-island-16961.herokuapp.com/contacts/627c4da2b444b59102205d86",
+            "value": "627c4da2b444b59102205d86"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully Deleted Contact ID: {_id: #}"
+          },
+          "500": {
+            "description": "There was a problem with your delete request."
+          }
+        }
+      }
+    }
+  }
+}

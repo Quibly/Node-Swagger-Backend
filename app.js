@@ -2,6 +2,11 @@
 let port = process.env.PORT || 8080;
 let express = require('express');
 let server = express();
+let swaggerUI = require('swagger-ui-express');
+let swaggerDocument = require('./swagger/swagger-output.json');
+
+// configure swagger UI Express
+server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // configure bodyparser
 let bodyParser = require('body-parser');
