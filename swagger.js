@@ -5,7 +5,7 @@ const doc = {
         title: 'My Contacts API',
         description: 'This API GETS and SETS contact information for users'
     },
-    host: 'http://fathomless-island-16961.herokuapp.com',
+    host: 'fathomless-island-16961.herokuapp.com',
     schemes: ['http']
 };
 
