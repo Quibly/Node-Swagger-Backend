@@ -6,7 +6,6 @@ const doc = {
         description: 'This API GETS and SETS contact information for users'
     },
     host: 'fathomless-island-16961.herokuapp.com',
-    port: process.env.PORT,
     schemes: ['http', 'https']
 };
 

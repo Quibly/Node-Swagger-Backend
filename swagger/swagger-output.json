@@ -8,7 +8,8 @@
   "host": "fathomless-island-16961.herokuapp.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/contacts/": {
