@@ -6,7 +6,7 @@ const doc = {
         description: 'This API GETS and SETS contact information for users'
     },
     host: 'fathomless-island-16961.herokuapp.com',
-    schemes: ['http', 'https']
+    schemes: ['https']
 };
 
 const outputFile = './swagger/swagger-output.json';
