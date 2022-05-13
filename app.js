@@ -2,7 +2,7 @@
 let port = process.env.PORT || 8080;
 let express = require('express');
 let server = express();
-let cors = require('cors');
+// let cors = require('cors');
 let swaggerUI = require('swagger-ui-express');
 let swaggerDocument = require('./swagger/swagger-output.json');
 
@@ -10,7 +10,16 @@ let swaggerDocument = require('./swagger/swagger-output.json');
 server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 //configure cors module
-server.use(cors());
+// server.use(cors());
+
+// configure header
+server.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Z-Key');
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+});
 
 // configure bodyparser
 let bodyParser = require('body-parser');
