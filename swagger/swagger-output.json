@@ -223,7 +223,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Updated Contact:",
+            "description": "",
             "schema": {
                 "type": "object",
                 "properties": {

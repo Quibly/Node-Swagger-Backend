@@ -71,7 +71,7 @@ function updateContact(request, response) {
     try {
         const { id: _id } = request.params;
         const content = request.body;
-
+        const contentString = JSON.stringify(content, null, 2);
         /*  #swagger.parameters['id'] = {
                 in: 'path',
                 description: 'Get a specific contact with the _id # and change contents with request body',
@@ -93,8 +93,8 @@ function updateContact(request, response) {
                 }
             } */
 
-        contact.findByIdAndUpdate(_id, content, { new: true }, (error, docs) => {
-            response.status(200).send(`Updated Contact: ${docs}`);
+        contact.findByIdAndUpdate(_id, content, { new: true }, () => {
+            response.status(200).send(contentString);
         });
     } catch (err) {
         response.status(500).send(`There was a problem with your update. It didn't go through.`);
