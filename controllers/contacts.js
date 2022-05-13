@@ -45,6 +45,7 @@ function getOne(request, response) {
 function createContact(request, response) {
     try {
         const newContact = new contact(request.body);
+        const contactObj = JSON.parse(newContact);
 
         /*  #swagger.parameters['body'] = {
                 in: 'body',
@@ -59,7 +60,7 @@ function createContact(request, response) {
         } */
 
         newContact.save();
-        response.status(200).send(`${newContact}`);
+        response.status(200).send(contactObj);
     } catch (err) {
         response.status(500).send('There was a problem with adding the new Contact.');
     }
