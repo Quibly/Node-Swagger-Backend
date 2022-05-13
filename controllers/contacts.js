@@ -43,21 +43,21 @@ function getOne(request, response) {
 
 //function for creating a new contact
 function createContact(request, response) {
-    const newContact = new contact(request.body);
+    try {
+        const newContact = new contact(request.body);
 
-    /*  #swagger.parameters['body'] = {
-            in: 'body',
-            description: 'Add a contact using request body',
-            schema: {
-                $firstName: 'Jon',
-                $lastName: 'Doe',
-                $email: 'test@email.com',
-                $favoriteColor: 'test',
-                $birthday: '0101'
-            }
+        /*  #swagger.parameters['body'] = {
+                in: 'body',
+                description: 'Add a contact using request body',
+                schema: {
+                    $firstName: 'Jon',
+                    $lastName: 'Doe',
+                    $email: 'test@email.com',
+                    $favoriteColor: 'test',
+                    $birthday: '0101'
+                }
         } */
 
-    try {
         newContact.save();
         response.status(200).send(`Created Contact Successfully: \n${newContact}`);
     } catch (err) {
