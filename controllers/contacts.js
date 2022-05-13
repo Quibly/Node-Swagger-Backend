@@ -59,9 +59,9 @@ function createContact(request, response) {
         } */
 
         newContact.save();
-        response.status(200).send(`Created Contact Successfully: \n${newContact}`);
+        response.status(200).send(`${newContact}`);
     } catch (err) {
-        response.status(500).send(err);
+        response.status(500).send('There was a problem with adding the new Contact.');
     }
 }
 
