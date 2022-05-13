@@ -51,7 +51,7 @@ async function createContact(request, response) {
 
     try {
         await newContact.save();
-        response.status(201).send(`Created Contact Successfully: \n${newContact}`);
+        response.status(200).send(`Created Contact Successfully: \n${newContact}`);
     } catch (err) {
         response.status(500).send(err);
     }
