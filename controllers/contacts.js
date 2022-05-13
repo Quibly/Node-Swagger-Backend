@@ -45,7 +45,7 @@ function getOne(request, response) {
 function createContact(request, response) {
     try {
         const newContact = new contact(request.body);
-        const contactString = JSON.stringify(newContact);
+        const contactString = JSON.stringify(newContact, null, 2);
 
         /*  #swagger.parameters['body'] = {
                 in: 'body',
