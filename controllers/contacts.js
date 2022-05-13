@@ -42,7 +42,7 @@ function getOne(request, response) {
 }
 
 //function for creating a new contact
-async function createContact(request, response) {
+function createContact(request, response) {
     const newContact = new contact(request.body);
 
     /*  #swagger.parameters['body'] = {
@@ -58,7 +58,7 @@ async function createContact(request, response) {
         } */
 
     try {
-        await newContact.save();
+        newContact.save();
         response.status(200).send(`Created Contact Successfully: \n${newContact}`);
     } catch (err) {
         response.status(500).send(err);
